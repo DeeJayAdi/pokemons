@@ -13,7 +13,7 @@ class App extends Component {
       orderBy: "pokedexup",
       searchByName: "",
     },
-    activePokemon: null,
+    activePokemon: "",
     pokemons: [],
   };
   componentDidMount = () => {
@@ -38,6 +38,11 @@ class App extends Component {
     this.setState((prev) => {
       prev.filters.orderBy = order;
       return prev;
+    });
+  };
+  setActive = (id) => {
+    this.setState({
+      activePokemon: id,
     });
   };
   render() {
@@ -65,7 +70,15 @@ class App extends Component {
               return sort;
             })
             .map((p) => {
-              return <Pokemon key={p.id} id={p.id} name={p.name} />;
+              return (
+                <Pokemon
+                  key={p.id}
+                  id={p.id}
+                  name={p.name}
+                  active={this.state.activePokemon === p.id}
+                  setActive={this.setActive}
+                />
+              );
             })}
         </div>
       </>

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Component } from "react";
+import { CgClose } from "react-icons/cg";
 import "./Pokemon.css";
 
 class Pokemon extends Component {
@@ -37,10 +38,18 @@ class Pokemon extends Component {
   render() {
     const { name, img } = this.state.info;
     return (
-      <div className="pokemon">
+      <div
+        className={this.props.active ? "pokemon active" : "pokemon"}
+        onClick={() =>
+          !this.props.active && this.props.setActive(this.props.id)
+        }
+      >
         {this.state.settings.loading && (
           <div className="loading">Loading...</div>
         )}
+        <div className="close" onClick={() => this.props.setActive("")}>
+          <CgClose />
+        </div>
         <div className="poke-name">
           {name.slice(0, 1).toUpperCase() + name.slice(1)}
         </div>
