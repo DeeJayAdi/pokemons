@@ -1,0 +1,31 @@
+@media (min-device-width: 900px) {
+  div.pokemon {
+    position: relative;
+    padding: 1rem;
+    border: 1rem solid #d99e32;
+    border-radius: 10px;
+    min-width: 400px;
+    width: 400px;
+    height: 500px;
+    margin: 1rem;
+    background-color: #bf8034;
+  }
+
+  div.poke-name {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
+  img.poke-img {
+    width: 100%;
+  }
+  div.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #bf8034;
+    text-align: center;
+  }
+}
