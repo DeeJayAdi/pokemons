@@ -55,6 +55,9 @@
     font-size: 1.7rem;
     font-weight: bold;
   }
+  div.pokemon.active div.poke-name {
+    margin-left: 47%;
+  }
   img.poke-img {
     width: 100%;
     max-width: 400px;
@@ -67,5 +70,12 @@
     height: 100%;
     background-color: #bf8034;
     text-align: center;
+  }
+  div.poke-stats-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: left;
   }
 }

@@ -18,7 +18,7 @@ class App extends Component {
   };
   componentDidMount = () => {
     axios
-      .get("https://pokeapi.co/api/v2/pokemon/?limit=9999")
+      .get("https://pokeapi.co/api/v2/pokemon/?limit=1")
       .then((d) => {
         const pokemons = d.data.results;
         pokemons.forEach((p, index) => (p.id = index));
