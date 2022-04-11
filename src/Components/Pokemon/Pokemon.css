@@ -14,25 +14,39 @@
     text-align: center;
     transition: all 300ms;
     z-index: 0;
+    cursor: pointer;
   }
   div.pokemon.active {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
+    width: 90vw;
+    height: 90vh;
     z-index: 1;
+    cursor: default;
   }
   div.pokemon.active div.close {
     display: block;
   }
+  div.top {
+    display: flex;
+    justify-content: space-between;
+  }
+  div.top div {
+    align-self: center;
+  }
+  div.poke-stats {
+    font-family: "Saira Stencil One", cursive;
+    font-size: x-large;
+  }
   div.close {
     display: none;
     position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
+    top: -1rem;
+    right: -1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
     background-color: #d99e32;
     cursor: pointer;
   }
