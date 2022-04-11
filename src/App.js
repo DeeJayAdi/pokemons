@@ -3,6 +3,7 @@ import { Component } from "react";
 import axios from "axios";
 import Pokemon from "./Components/Pokemon/Pokemon";
 import Filters from "./Components/Filters/Filters";
+import Footer from "./Components/Footer/Footer";
 
 class App extends Component {
   state = {
@@ -81,6 +82,7 @@ class App extends Component {
               );
             })}
         </div>
+        <Footer />
       </>
     );
   }
