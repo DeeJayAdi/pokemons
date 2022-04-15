@@ -59,6 +59,7 @@
     cursor: pointer;
     font-size: 2rem;
     transition: filter 300ms;
+    z-index: 10;
   }
   div.close svg {
     position: relative;
@@ -84,7 +85,6 @@
     font-family: "Saira Stencil One", cursive;
     font-size: x-large;
   }
-
   div.poke-name {
     text-align: center;
     font-size: 1.7rem;
@@ -104,7 +104,29 @@
     width: 100%;
     height: 100%;
     background-color: #bf8034;
-    text-align: center;
+    z-index: 1;
+  }
+  div.loading::after {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    content: "";
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1rem;
+    border-color: #d99e32 transparent #d99e32 #d99e32;
+    width: 5rem;
+    height: 5rem;
+    animation: loading 1s infinite normal;
+  }
+  @keyframes loading {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
   }
   div.poke-stats-box {
     position: absolute;

@@ -40,21 +40,16 @@ class Pokemon extends Component {
             ...prev.info,
             stats: {
               hp: d.data.stats.find((a) => a.stat.name === "hp").base_stat,
-
               defense: d.data.stats.find((a) => a.stat.name === "defense")
                 .base_stat,
-
               specialDefense: d.data.stats.find(
                 (a) => a.stat.name === "special-defense"
               ).base_stat,
-
               attack: d.data.stats.find((a) => a.stat.name === "attack")
                 .base_stat,
-
               specialAttack: d.data.stats.find(
                 (a) => a.stat.name === "special-attack"
               ).base_stat,
-
               speed: d.data.stats.find((a) => a.stat.name === "speed")
                 .base_stat,
             },
@@ -76,7 +71,7 @@ class Pokemon extends Component {
           }
         >
           {this.state.settings.loading && (
-            <div className="loading noselect">Loading...</div>
+            <div className="loading noselect"></div>
           )}
           <div className="close" onClick={() => this.props.setActive("")}>
             <CgClose />
