@@ -76,7 +76,7 @@ class Pokemon extends Component {
           }
         >
           {this.state.settings.loading && (
-            <div className="loading">Loading...</div>
+            <div className="loading noselect">Loading...</div>
           )}
           <div className="close" onClick={() => this.props.setActive("")}>
             <CgClose />

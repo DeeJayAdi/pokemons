@@ -47,12 +47,6 @@ class App extends Component {
     });
   };
   render() {
-    if (this.state.activePokemon !== "") {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
     return (
       <>
         <Filters
