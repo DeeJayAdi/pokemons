@@ -1,20 +1,18 @@
-@media (min-device-width: 900px) {
-  div.poke-abilities div.list {
-    display: flex;
-    justify-content: stretch;
-  }
-  div.poke-ability {
-    width: 100%;
-    background-color: #d99e32;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
-  }
-  div.ability-name {
-    font-size: x-large;
-    font-weight: bold;
-  }
-  div.abilit-desc {
-    font-size: large;
-  }
+div.poke-abilities div.list {
+  display: flex;
+  justify-content: stretch;
+}
+div.poke-ability {
+  width: 100%;
+  background-color: #d99e32;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+div.ability-name {
+  font-size: x-large;
+  font-weight: bold;
+}
+div.abilit-desc {
+  font-size: large;
 }

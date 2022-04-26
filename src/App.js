@@ -66,8 +66,15 @@ class App extends Component {
               let sort = a.id - b.id;
               if (orderBy === "pokedexup") sort = a.id - b.id;
               else if (orderBy === "pokedexdown") sort = b.id - a.id;
-              else if (orderBy === "nameup") sort = a.name - b.name;
-              else if (orderBy === "namedown") sort = b.name - a.name;
+              else if (orderBy === "nameup") {
+                if (a.name < b.name) return -1;
+                if (a.name > b.name) return 1;
+                return 0;
+              } else if (orderBy === "namedown") {
+                if (a.name > b.name) return -1;
+                if (a.name < b.name) return 1;
+                return 0;
+              }
               return sort;
             })
             .map((p) => {

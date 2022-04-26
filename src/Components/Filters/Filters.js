@@ -3,6 +3,8 @@ import "./Filters.css";
 const orders = [
   { label: "Pokedex up", value: "pokedexup" },
   { label: "Pokedex down", value: "pokedexdown" },
+  { label: "Name up", value: "nameup" },
+  { label: "Name down", value: "namedown" },
 ];
 
 const Filters = (props) => (

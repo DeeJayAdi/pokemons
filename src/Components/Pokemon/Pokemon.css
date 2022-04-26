@@ -1,140 +1,145 @@
-@media (min-device-width: 900px) {
+div.poke-back {
+  position: relative;
+  min-width: 400px;
+  width: 400px;
+  height: 500px;
+  overflow: hidden;
+  margin: 1rem;
+}
+div.pokemon {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  padding: 1rem;
+  border: 1rem solid #d99e32;
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  background-color: #bf8034;
+  text-align: center;
+  z-index: 0;
+  cursor: pointer;
+  box-shadow: 0 0 10rem transparent;
+}
+div.pokemon.active + body {
+  background-color: red;
+}
+div.pokemon.active {
+  position: fixed;
+  top: 53%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+  z-index: 200;
+  cursor: default;
+  animation: show 500ms;
+  box-shadow: 0 0 10rem black;
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+div.pokemon.active div.close {
+  display: block;
+}
+div.close {
+  display: none;
+  position: absolute;
+  top: -2rem;
+  right: -2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: #d99e32;
+  padding-left: 0.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: filter 300ms;
+  z-index: 10;
+}
+div.close svg {
+  position: relative;
+  display: block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+div.close:hover {
+  filter: brightness(85%);
+}
+div.close:active {
+  filter: brightness(75%);
+}
+div.top {
+  display: flex;
+  justify-content: space-between;
+}
+div.top div {
+  align-self: center;
+}
+div.poke-stats {
+  font-family: "Saira Stencil One", cursive;
+  font-size: x-large;
+}
+div.poke-name {
+  text-align: center;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+div.pokemon.active div.poke-name {
+  margin-left: 47%;
+}
+img.poke-img {
+  width: 100%;
+  max-width: 400px;
+}
+div.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #bf8034;
+  z-index: 1;
+}
+div.loading::after {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  content: "";
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 1rem;
+  border-color: #d99e32 transparent #d99e32 #d99e32;
+  width: 5rem;
+  height: 5rem;
+  animation: loading 1s infinite normal;
+}
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+div.poke-stats-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1rem;
+  text-align: left;
+}
+@media (max-width: 900px), (max-device-width: 900px) {
   div.poke-back {
-    position: relative;
-    min-width: 400px;
-    width: 400px;
+    min-width: none;
+    width: 100%;
     height: 500px;
-    overflow: hidden;
-    margin: 1rem;
-  }
-  div.pokemon {
-    position: relative;
-    top: 0%;
-    left: 0%;
-    padding: 1rem;
-    border: 1rem solid #d99e32;
-    border-radius: 10px;
-    width: 100%;
-    height: 100%;
-    background-color: #bf8034;
-    text-align: center;
-    z-index: 0;
-    cursor: pointer;
-    box-shadow: 0 0 10rem transparent;
-  }
-  div.pokemon.active + body {
-    background-color: red;
-  }
-  div.pokemon.active {
-    position: fixed;
-    top: 53%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    height: 90%;
-    z-index: 200;
-    cursor: default;
-    animation: show 500ms;
-    box-shadow: 0 0 10rem black;
-  }
-  @keyframes show {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  div.pokemon.active div.close {
-    display: block;
-  }
-  div.close {
-    display: none;
-    position: absolute;
-    top: -2rem;
-    right: -2rem;
-    width: 3rem;
-    height: 3rem;
-    background-color: #d99e32;
-    padding-left: 0.1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 2rem;
-    transition: filter 300ms;
-    z-index: 10;
-  }
-  div.close svg {
-    position: relative;
-    display: block;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  div.close:hover {
-    filter: brightness(85%);
-  }
-  div.close:active {
-    filter: brightness(75%);
-  }
-  div.top {
-    display: flex;
-    justify-content: space-between;
-  }
-  div.top div {
-    align-self: center;
-  }
-  div.poke-stats {
-    font-family: "Saira Stencil One", cursive;
-    font-size: x-large;
-  }
-  div.poke-name {
-    text-align: center;
-    font-size: 1.7rem;
-    font-weight: bold;
-  }
-  div.pokemon.active div.poke-name {
-    margin-left: 47%;
-  }
-  img.poke-img {
-    width: 100%;
-    max-width: 400px;
-  }
-  div.loading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #bf8034;
-    z-index: 1;
-  }
-  div.loading::after {
-    position: absolute;
-    top: 40%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    content: "";
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 1rem;
-    border-color: #d99e32 transparent #d99e32 #d99e32;
-    width: 5rem;
-    height: 5rem;
-    animation: loading 1s infinite normal;
-  }
-  @keyframes loading {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
-  }
-  div.poke-stats-box {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 1rem;
-    text-align: left;
   }
 }
